@@ -1,0 +1,9 @@
+<h1>To do's for the day</h1>
+
+<% @arns.each do |arn| %>
+  <p>
+  <%= arn.question %>?
+  <%= link_to 'Yes', { :action => 'vote', :id => arn[:id], :answer => 'yes' }, :method => :post %> (<%= arn.yes %>) /
+  <%= link_to 'No', { :action => 'vote', :id => arn[:id], :answer => 'no' }, :method => :post %> (<%= arn.no %>)
+  </p>
+<% end %>
